@@ -120,7 +120,7 @@ app.delete("/users/:id", (req, res) => {
   (async () => {
     try {
       const document = db.collection("users").doc(req.params.id);
-      await document.update({ deteledAt: new Date().toISOString() });
+      await document.update({ deletedAt: new Date().toISOString() });
       return res.status(200).send();
     } catch (error) {
       console.log(error);
@@ -222,7 +222,7 @@ app.delete("/products/:id", (req, res) => {
   (async () => {
     try {
       const document = db.collection("products").doc(req.params.id);
-      await document.update({ deteledAt: new Date().toISOString() });
+      await document.update({ deletedAt: new Date().toISOString() });
       return res.status(200).send();
     } catch (error) {
       console.log(error);
@@ -324,7 +324,7 @@ app.delete("/orders/:id", (req, res) => {
   (async () => {
     try {
       const document = db.collection("orders").doc(req.params.id);
-      await document.update({ deteledAt: new Date().toISOString() });
+      await document.update({ deletedAt: new Date().toISOString() });
       return res.status(200).send();
     } catch (error) {
       console.log(error);
