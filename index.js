@@ -16,7 +16,8 @@ const db = admin.firestore();
 const express = require("express");
 const app = express();
 const PORT = 4000;
-
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
 const cors = require("cors");
 app.use(cors({ origin: true }));
 
@@ -50,7 +51,11 @@ app.post("/users", (req, res) => {
           await db
             .collection("users")
             .doc("/" + id + "/")
-            .create({ ...req.body, createdAt: new Date().toISOString() });
+            .create({
+              ...req.body,
+              createdAt: new Date().toISOString(),
+              status: "inactive",
+            });
           return res.status(200).send();
         });
     } catch (error) {
