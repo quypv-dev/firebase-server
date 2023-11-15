@@ -4,11 +4,11 @@
 const admin = require("firebase-admin");
 
 const serviceAccount = require("./permission.json");
-
+const data = require("./orders.json")
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL:
-    "https://zerot-api-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "https://zero-api-a307a-default-rtdb.asia-southeast1.firebasedatabase.app",
 });
 
 // Setup app dependencies
@@ -133,6 +133,8 @@ app.delete("/users/:id", (req, res) => {
     }
   })();
 });
+
+const productsss = 
 
 app.post("/products", (req, res) => {
   (async () => {
