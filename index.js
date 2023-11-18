@@ -7,8 +7,7 @@ const serviceAccount = require("./permission.json");
 const data = require("./orders.json")
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL:
-    "https://zero-api-a307a-default-rtdb.asia-southeast1.firebasedatabase.app",
+  databaseURL: "https://zerot-api-default-rtdb.asia-southeast1.firebasedatabase.app"
 });
 
 // Setup app dependencies
